@@ -20,6 +20,10 @@ gem 'webpacker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'rspec-rails'
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'haml-lint', require: false
 end
 
 group :development, :test do

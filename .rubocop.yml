@@ -1,0 +1,56 @@
+inherit_from: .rubocop_todo.yml
+
+require: rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.2
+  Include:
+    - Rakefile
+    - config.ru
+    - lib/**/*.rake
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - db/migrate/*.rb
+    - node_modules/**/*
+    - vendor/**/*
+
+Rails:
+  Enabled: true
+
+LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/BlockLength:
+  Exclude:
+    - lib/tasks/linting.rake
+
+SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Documentation: # format too restricted
+  Enabled: false
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Naming/FileName:
+  Exclude:
+    - Gemfile
+    - Rakefile
+    - Capfile
+
+Bundler/OrderedGems:
+  Enabled: false
